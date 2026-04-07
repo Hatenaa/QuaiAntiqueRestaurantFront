@@ -7,6 +7,7 @@ export const allRoutes = [
     new Route("/signup", "Inscription", "./pages/auth/signup.html"),
     new Route("/account", "Mon compte", "./pages/auth/account.html"),
     new Route("/editPassword", "Modifier mon mot de passe", "./pages/auth/editPassword.html"),
+    new Route("/allResa", "Mes réservations", "./pages/reservations/allresa.html"),
 ]
 
 export const websiteName = "Quai Antique";
