@@ -93,3 +93,29 @@ function sanitizeHtml(text) {
     tempHtml.textContent = text;
     return tempHtml.innerHTML;
 }
+
+function getInfosUser(){
+
+    let myHeaders = new Headers();
+    myHeaders.append("X-AUTH-TOKEN", getToken());
+
+    let requestOptions = {
+        method: "GET",
+        headers: myHeaders,
+        redirect: "follow"
+    };
+
+    fetch(apiUrl + "account/me", requestOptions)
+    .then(Response => {
+        if(Response.ok){
+            return Response.json();
+        }
+        else {
+            console.log("Erreur lors de la récupération des infos utilisateur");
+        }
+    })
+    .then(result => {
+        return result;
+    })
+    .catch(error => console.log("Erreur lors de la récupération des infos utilisateur : " + error));
+}
