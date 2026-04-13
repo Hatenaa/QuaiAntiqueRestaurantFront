@@ -15,6 +15,7 @@ jobs:
         username: frida
         password: ${{ secrets.ftp_password }}
         protocol: ftps
+        timeout: 300000
         exclude: |
 
           **/.git*
